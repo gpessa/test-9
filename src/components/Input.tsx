@@ -5,6 +5,11 @@ const Input = styled.input`
   padding: 10px;
   border-radius: 20px;
   margin-bottom: 2rem;
+
+  &:focus{
+    outline: none;
+    border-color: var(--satin-sheen-gold)
+  }
 `
 
 

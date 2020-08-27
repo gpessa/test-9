@@ -1,5 +1,4 @@
 import React, { useCallback } from "react"
-import styled from "styled-components"
 import { useInput, getStringNumbers } from "../utils"
 import Title from "./Title";
 import Section from "./Section";

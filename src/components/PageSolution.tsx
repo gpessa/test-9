@@ -105,7 +105,7 @@ const PageSolution: React.FC = () => {
 
       <Textarea rows={10} style={{ width: 220 }} {...bind}>{value}</Textarea>
 
-      <Subtitle>Accounts</Subtitle>
+      <Subtitle>Accounts:</Subtitle>
       
       <div>
         {getResult(value)?.map(({ number, status }) => (

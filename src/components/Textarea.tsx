@@ -6,6 +6,11 @@ const Textarea = styled.textarea`
   border-radius: 20px;
   margin-bottom: 2rem;
   width: 400px;
+
+  &:focus{
+    outline: none;
+    border-color: var(--satin-sheen-gold)
+  }
 `
 
 export default Textarea;

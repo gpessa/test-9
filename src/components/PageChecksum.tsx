@@ -27,7 +27,7 @@ const PageChecksum: React.FC = () => {
       <p>
         I started from the easy thing (I hope I got it right).
         <br />I created a function to calculate the checksum.
-        <br />The function accept an array of numbers and response true/false
+        <br />The function accept an array of numbers and respond with true/false
       </p>
 
       <Input {...bind} />
