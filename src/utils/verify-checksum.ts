@@ -1,6 +1,4 @@
 export default function verifyChecksum(list: number[]) {
-  if (list.length !== 9) return false
-  
   return (
     [...list]
       .reverse()
