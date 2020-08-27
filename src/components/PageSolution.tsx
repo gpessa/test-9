@@ -5,6 +5,21 @@ import Section from "./Section";
 import Result from "./Result";
 import Textarea from "./Textarea";
 import Subtitle from "./Subtitle";
+import styled from "styled-components";
+
+const Badge = styled.div`
+  line-height: 37px;
+  width: 35px;
+  height: 35px;
+  background-color: var(--vegas-gold);
+  font-size: 0.7rem;
+  color: white;
+  margin: -7px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 1rem;
+  font-weight: bold;
+`
 
 const PageSolution: React.FC = () => {
   const { bind, value } = useInput(`
@@ -68,24 +83,20 @@ const PageSolution: React.FC = () => {
   ||_  _|  | _||_|  ||_| _ `.substring(1))
 
   const getResult = useCallback((value: string) => {
-    const accounts = splitAccounts(value)
-    
-    return accounts!.map(text => {
-      const stringNumbers = getStringNumbers(text)
-      const accountNumbers = stringNumbers.map(numberTranslate)
+    return splitAccounts(value)!
+      .map(getStringNumbers)
+      .map(accounts => {
+        const arrayNumber = accounts.map(numberTranslate)
+        const number = arrayNumber.join('')
 
-      const isCompromised = accountNumbers.includes('?')
-      const account = accountNumbers.join('')
-      
-      if (isCompromised) return { account, problem: 'ILL' }
-      
-      const isValid = verifyChecksum(accountNumbers as number[])
+        const isIll = arrayNumber.includes('?')
+        if (isIll) return { number, status: 'ILL' }
 
-      return {
-        account,
-        problem: !isValid && 'ERR'
-      }
-    })
+        const isErr = verifyChecksum(arrayNumber as number[])
+        if (isErr) return { number, status: 'ERR' }
+
+        return { number }
+      })
   }, [])
 
   return (
@@ -97,8 +108,11 @@ const PageSolution: React.FC = () => {
       <Subtitle>Accounts</Subtitle>
       
       <div>
-        {getResult(value)?.map(({ account, problem }) => (
-          <Result inline key={account}>{account}{problem && ` ${problem}`}</Result>
+        {getResult(value)?.map(({ number, status }) => (
+          <Result inline key={number}>
+            {number}
+            {status && <Badge>{status}</Badge>}
+          </Result>
         ))}
       </div>
     </Section>

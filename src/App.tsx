@@ -3,13 +3,13 @@ import { PageChecksum, PageSolution, PageListSplitter, PageAccountString, PageNu
 
 function App() {
   return (
-    <div className="App">
+    <>
       <PageChecksum />
       <PageListSplitter />
       <PageAccountString />
       <PageNumberTraslator />
       <PageSolution />
-    </div>
+    </>
   );
 }
 
