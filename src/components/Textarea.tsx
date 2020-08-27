@@ -4,7 +4,7 @@ const Textarea = styled.textarea`
   border: 2px solid var(--hookers-green);
   padding: 10px;
   border-radius: 20px;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   width: 400px;
 `
 

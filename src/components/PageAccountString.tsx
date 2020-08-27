@@ -7,7 +7,6 @@ import Input from "./Input";
 import Result from "./Result";
 import Subtitle from "./Subtitle";
 
-
 const PageAccountString: React.FC = () => {
   const { bind, value } = useInput('    _  _     _  _  _  _  _   | _| _||_||_ |_   ||_||_|  ||_  _|  | _||_|  ||_| _|')
 
@@ -24,7 +23,7 @@ const PageAccountString: React.FC = () => {
         The function return an array of number rappresented by strings
       </p>
 
-      <Input {...bind} />
+      <Input {...bind} style={{ width: 400 }}/>
 
       <Subtitle>Numbers:</Subtitle>
 

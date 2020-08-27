@@ -92,7 +92,7 @@ const PageSolution: React.FC = () => {
     <Section>
       <Title>Solution</Title>
 
-      <Textarea rows={10} {...bind}>{value}</Textarea>
+      <Textarea rows={10} style={{ width: 220 }} {...bind}>{value}</Textarea>
 
       <Subtitle>Accounts</Subtitle>
       

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const Title = styled.h1`
+const Title = styled.h2`
   margin: 0 0 2rem;
   font-size: 3rem;
   color: var(--satin-sheen-gold);

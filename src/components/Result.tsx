@@ -6,6 +6,7 @@ const Result = styled.pre`
   color: var(--misty-moss);
   border-radius: 20px;
   display: ${(props: { inline?: boolean }) => props.inline ? 'inline-flex' : 'flex'};
+  margin: 0 0 1rem;
   & + & {
     margin-left: ${(props: { inline?: boolean }) => props.inline ? '1rem' : '0'};
   }

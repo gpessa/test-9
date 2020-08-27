@@ -31,7 +31,8 @@ const PageListSplitter: React.FC = () => {
         remove the new lines<br />
         and split the account numbers based on string length
       </p>
-      <Textarea rows={10} {...bind}>{value}</Textarea>
+      
+      <Textarea rows={10} style={{ width: 220 }} {...bind}>{value}</Textarea>
 
       <Subtitle>Accounts:</Subtitle>
     
