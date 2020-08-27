@@ -2,6 +2,7 @@
   "name": "test-9",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://gpessa.github.io/test-9",
   "dependencies": {
     "cra-template": "1.0.3",
     "react": "^16.13.1",
@@ -26,7 +27,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
