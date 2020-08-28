@@ -85,14 +85,13 @@ const PageSolution: React.FC = () => {
   const getResult = useCallback((value: string) => {
     return splitAccounts(value)!
       .map(getStringNumbers)
-      .map(accounts => {
-        const arrayNumber = accounts.map(numberTranslate)
-        const number = arrayNumber.join('')
+      .map(stringNumbers => {
+        const number = stringNumbers.map(numberTranslate)
 
-        const isIll = arrayNumber.includes('?')
+        const isIll = number.includes('?')
         if (isIll) return { number, status: 'ILL' }
 
-        const isErr = verifyChecksum(arrayNumber as number[])
+        const isErr = !verifyChecksum(number as number[])
         if (isErr) return { number, status: 'ERR' }
 
         return { number }
@@ -108,12 +107,16 @@ const PageSolution: React.FC = () => {
       <Subtitle>Accounts:</Subtitle>
       
       <div>
-        {getResult(value)?.map(({ number, status }) => (
-          <Result inline key={number}>
-            {number}
-            {status && <Badge>{status}</Badge>}
-          </Result>
-        ))}
+        {getResult(value)?.map(({ number, status }) => {
+          const account = number.join('')
+          
+          return (
+            <Result inline key={account} >
+              {account}
+              {status && <Badge>{status}</Badge>}
+            </Result>
+          )
+        })}
       </div>
     </Section>
   )

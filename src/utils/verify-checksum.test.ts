@@ -2,7 +2,7 @@ import verifyChecksum from "./verify-checksum";
 
 describe("verifyChecksum", () => {
 
-  it("It should return true in case of valid account number", () => {
+  it("It should return true in case of valid account number checksum", () => {
     const test1 = [4,5,7,5,0,8,0,0,0]
     expect(verifyChecksum(test1)).toBe(true);
 
@@ -10,7 +10,7 @@ describe("verifyChecksum", () => {
     expect(verifyChecksum(test2)).toBe(true);
   });
 
-  it("It should return false in case of invalid account number", () => {
+  it("It should return false in case of invalid account number checksum", () => {
     const test2 = [1, 0, 0, 0, 2, 0, 0, 5, 1];
     expect(verifyChecksum(test2)).toBe(false);
   });
