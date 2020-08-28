@@ -3,11 +3,13 @@ import PageListSplitter from "./PageListSplitter";
 import PageAccountString from "./PageAccountString";
 import PageSolution from "./PageSolution";
 import PageNumberTraslator from "./PageNumberTraslator";
+import ScrollMore from "./ScrollMore";
 
 export {
+  ScrollMore,
   PageChecksum,
-  PageAccountString,
+  PageSolution,
   PageListSplitter,
+  PageAccountString,
   PageNumberTraslator,
-  PageSolution
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageChecksum, PageSolution, PageListSplitter, PageAccountString, PageNumberTraslator } from './components';
+import { PageChecksum, ScrollMore, PageSolution, PageListSplitter, PageAccountString, PageNumberTraslator } from './components';
 
 function App() {
   return (
@@ -9,6 +9,8 @@ function App() {
       <PageAccountString />
       <PageNumberTraslator />
       <PageSolution />
+
+      <ScrollMore />
     </>
   );
 }
